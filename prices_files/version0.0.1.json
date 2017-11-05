@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Bier / Radler (0,5l)",
+        "price": 2.8
+    },
+    {
+        "name": "Limo",
+        "price": 1.5
+    },
+    {
+        "name": "1/4l Wein",
+        "price": 3.5
+    },
+    {
+        "name": "1/4l Spritzer",
+        "price": 2.5
+    },
+    {
+        "name": "Glühwein",
+        "price": 2.5
+    },
+    {
+        "name": "1 Fl. Wein",
+        "price": 9
+    },
+    {
+        "name": "Frankfurter",
+        "price": 2.5
+    },
+    {
+        "name": "Kuchen",
+        "price": 1.5
+    },
+    {
+        "name": "Kaffee",
+        "price": 1.5
+    },
+    {
+        "name": "Schnaps",
+        "price": 1
+    }
+]

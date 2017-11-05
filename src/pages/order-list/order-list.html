@@ -1,0 +1,88 @@
+<ion-header >
+  <ion-navbar hideBackButton="true">
+      <ion-title>Bestellung</ion-title>
+      <ion-card>
+          <ion-card-content>
+              <ion-row>
+                  <ion-col col-2>
+                      <button ion-item (click)="goBack()">
+                          <ion-icon name="ios-arrow-back" ></ion-icon>
+                      </button>
+                  </ion-col>
+                  <ion-col col-7>
+                      <button ion-item (click)="goChange()">
+                          <ion-icon name="cash" item-end ></ion-icon>
+                      </button>
+                  </ion-col>
+                  <ion-col col-3>
+                      <button ion-item (click)="reset()">
+                          <ion-icon name="trash" item-end ></ion-icon>
+                      </button>
+                  </ion-col>
+              </ion-row>
+          </ion-card-content>
+      </ion-card>
+  </ion-navbar>
+
+<!--<ion-navbar>
+  <ion-title>Bestellung</ion-title>
+  <ion-card>
+      <ion-card-content>
+          <button ion-button menuToggle>
+              <ion-icon name="ios-arrow-forward" item-left></ion-icon>
+          </button>
+          <ion-icon name="trash"></ion-icon>-->
+      <!--</ion-card-content>
+  </ion-card>
+</ion-navbar>-->
+</ion-header>-->
+
+<ion-content padding>
+
+<ion-grid>
+  <ion-list>
+      <ion-item *ngFor="let p of getSelection()" >
+          <ion-row (click)="onSelect(p)">
+              <ion-col col-1>
+                  {{p.amount}}
+              </ion-col>
+              <ion-col col-1>
+                  x
+              </ion-col>
+              <ion-col col-5>
+                  {{p.product.name}}
+              </ion-col>
+              <ion-col col-3>
+                  á {{p.product.price| currency:'EUR':true}}
+              </ion-col>
+              <ion-col col-1>
+              </ion-col>
+              <ion-col col-1>
+                   
+                  <ion-icon *ngIf="selectedProduct == p" name="md-checkmark-circle-outline"></ion-icon>
+                  <ion-icon *ngIf="selectedProduct != p" name="md-create"></ion-icon>
+              </ion-col>
+          </ion-row>
+          <ion-row *ngIf="selectedProduct == p">
+              <ion-col col-2></ion-col>
+              <ion-col col-3 (click)="increaseAmount(p)"><ion-icon name="add-circle"></ion-icon></ion-col>
+              <ion-col col-2></ion-col>
+              <ion-col col-3 (click)="decreaseAmount(p)"><ion-icon name="remove-circle"></ion-icon></ion-col>
+          </ion-row>
+      </ion-item>
+      <ion-item>
+          <ion-row style="font-weight: bold">
+              <ion-col col-2>
+              </ion-col>
+              <ion-col col-5>
+                  Summe: 
+              </ion-col>
+              <ion-col col-3>
+                  &nbsp;&nbsp;{{getSum()| currency:'EUR': true}}
+              </ion-col>
+          </ion-row>
+      </ion-item>
+  </ion-list>
+</ion-grid>
+
+</ion-content>

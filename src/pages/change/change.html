@@ -1,0 +1,46 @@
+<ion-header >
+  <ion-navbar hideBackButton="true">
+      <ion-title>Wechselgeld</ion-title>
+      <ion-card>
+          <ion-card-content>
+              <ion-row>
+                  <ion-col col-2>
+                      <button ion-item (click)="goBack()">
+                          <ion-icon name="ios-arrow-back" ></ion-icon>
+                      </button>
+                  </ion-col>
+                  <ion-col col-7></ion-col>
+                  <ion-col col-3>
+                      <button ion-item (click)="reset()">
+                          <ion-icon name="trash" item-end></ion-icon>
+                      </button>
+                  </ion-col>
+              </ion-row>
+          </ion-card-content>
+      </ion-card>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-item col-8>
+                <ion-label color="primary">Summe</ion-label>
+                <ion-input type="text" readonly="true" [value]="getSum() | currency:'EUR': true"></ion-input>
+            </ion-item>
+            <button color="dark" ion-button outline (click)="roundSum()" >
+                <ion-icon name="md-arrow-round-up"></ion-icon>
+            </button>
+            <button color="dark" ion-button outline (click)="undo()" >
+                <ion-icon name="undo"></ion-icon>
+            </button>
+        </ion-row>
+        <ion-item>
+            <ion-label color="primary">Gegeben</ion-label>
+            <ion-input type="number" [(ngModel)]="moneyIn" (keyup)="calcChange()"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary">Wechselgeld</ion-label>
+            <ion-input type="text" readonly="true" [value]="getChange() | currency:'EUR': true"></ion-input>
+        </ion-item>
+    </ion-grid>
+</ion-content>
