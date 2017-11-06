@@ -2,14 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ProductSelection } from '../../app/shared/app.product-data.type';
 import { ProductSelectionService } from '../../app/shared/app.product-selection.service';
-import { ProductService} from '../../app/shared/app.product.services';
 import { CalculatorPage } from '../calculator/calculator';
 import { ChangePage } from '../change/change';
 
  @Component({
      selector: 'page-order-list',
-     templateUrl: 'order-list.html',
-     providers: [ProductService]
+     templateUrl: 'order-list.html'
  })
  export class OrderListPage implements OnInit{
 
@@ -18,7 +16,6 @@ import { ChangePage } from '../change/change';
     constructor(
         public navCtrl: NavController,
         private productSelectionService: ProductSelectionService, 
-        private productService: ProductService
         ){
 
     }

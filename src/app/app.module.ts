@@ -5,6 +5,7 @@ import { HttpModule } from "@angular/http";
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { SettingsService } from "./shared/app.settings.service";
 import { ProductSelectionService } from "./shared/app.product-selection.service";
 import { CalculatorPage } from "../pages/calculator/calculator";
 import { ChangePage } from "../pages/change/change";
@@ -37,6 +38,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SettingsService,
     ProductSelectionService
   ]
 })
