@@ -1,3 +1,6 @@
+
+ionic cordova build --release android
+
 keytool -genkey -v -keystore gws_app.keystore -alias GWS_APP -keyalg RSA -keysize 2048 -validity 10000
 
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore gws_app.keystore .\platforms\android\build\outputs\apk\android-release-unsigned.apk GWS_app
